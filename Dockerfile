@@ -1,5 +1,4 @@
-# http://marceldegraaf.net/2014/05/05/coreos-follow-up-sinatra-logstash-
-elasticsearch-kibana.html
+# http://marceldegraaf.net/2014/05/05/coreos-follow-up-sinatra-logstash-elasticsearch-kibana.html
 # Marcel de Graaf <mail@marceldegraaf.net>
 FROM stackbrew/ubuntu:saucy
 MAINTAINER Nicolas Borboën <nicolas.borboen@epfl.ch>
