@@ -1,5 +1,5 @@
 [Unit]
-Description=elasticsearch
+Description=ELK Elasticsearch
 
 [Service]
 EnvironmentFile=/etc/environment

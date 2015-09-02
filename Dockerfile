@@ -9,7 +9,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y --force-yes openjdk-7-jre-
 
 # Install Elasticsearch
 RUN mkdir -p /opt/elasticsearch
-# RUN wget https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-1.0.1.tar.gz -O /tmp/elasticsearch-1.0.1.tar.gz
+
 # Elasticsearch 1.7.1
 RUN wget https://download.elastic.co/elasticsearch/elasticsearch/elasticsearch-1.7.1.tar.gz -O /tmp/elasticsearch-1.7.1.tar.gz
 RUN tar xfz /tmp/elasticsearch-1.7.1.tar.gz -C /opt/elasticsearch --strip-components=1
