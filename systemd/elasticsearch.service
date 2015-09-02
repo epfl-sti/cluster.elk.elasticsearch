@@ -1,0 +1,13 @@
+[Unit]
+Description=elasticsearch
+
+[Service]
+EnvironmentFile=/etc/environment
+ExecStartPre=/usr/bin/docker pull epfl-sti/elasticsearch
+ExecStart=/usr/bin/docker run --rm --name elasticsearch -p 9200:9200 -e HOST_IP=${HOST_IP} epfl-sti/elasticsearch
+ExecStartPost=/usr/bin/etcdctl set /elasticsearch/host ${HOST_IP}
+ExecStop=/usr/bin/docker kill elasticsearch
+ExecStopPost=/usr/bin/etcdctl rm /elasticsearch/host
+
+[X-Fleet]
+X-Conflicts=elasticsearch.service
