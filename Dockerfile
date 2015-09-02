@@ -1,10 +1,11 @@
 # http://marceldegraaf.net/2014/05/05/coreos-follow-up-sinatra-logstash-elasticsearch-kibana.html
 # Marcel de Graaf <mail@marceldegraaf.net>
-FROM stackbrew/ubuntu:saucy
+FROM ubuntu:14.04
 MAINTAINER Nicolas Borboën <nicolas.borboen@epfl.ch>
 
 # Install Java
-RUN apt-get update && apt-get install -y --force-yes openjdk-7-jre-headless wget
+RUN DEBIAN_FRONTEND=noninteractive apt-get update
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y --force-yes openjdk-7-jre-headless wget
 
 # Install Elasticsearch
 RUN mkdir -p /opt/elasticsearch
