@@ -4,7 +4,7 @@ FROM stackbrew/ubuntu:saucy
 MAINTAINER Nicolas Borboën <nicolas.borboen@epfl.ch>
 
 # Install Java
-RUN apt-get install -y --force-yes openjdk-7-jre-headless wget
+RUN apt-get update && apt-get install -y --force-yes openjdk-7-jre-headless wget
 
 # Install Elasticsearch
 RUN mkdir -p /opt/elasticsearch
