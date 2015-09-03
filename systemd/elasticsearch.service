@@ -3,8 +3,8 @@ Description=ELK Elasticsearch
 
 [Service]
 EnvironmentFile=/etc/environment
-ExecStartPre=/usr/bin/docker pull epflsti/cluster.elasticsearch
-ExecStart=/usr/bin/docker run --rm --name elasticsearch -p 9200:9200 -e HOST_IP=${HOST_IP} epflsti/cluster.elasticsearch
+ExecStartPre=/usr/bin/docker pull epflsti/cluster.elk.elasticsearch
+ExecStart=/usr/bin/docker run --rm --name elasticsearch -p 9200:9200 -e HOST_IP=${HOST_IP} epflsti/cluster.elk.elasticsearch
 ExecStartPost=/usr/bin/etcdctl set /elasticsearch/host ${HOST_IP}
 ExecStop=/usr/bin/docker kill elasticsearch
 ExecStopPost=/usr/bin/etcdctl rm /elasticsearch/host
